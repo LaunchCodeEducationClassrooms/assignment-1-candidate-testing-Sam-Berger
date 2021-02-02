@@ -31,7 +31,9 @@ function gradeQuiz(candidateAnswers) {
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
   console.clear()
   console.log("Candidate Name: " + candidateName)
+  console.log()
   let grade = 0;
+  let score = 0
   for (let i = 0; i < questions.length; i++) {
   console.log(`Question ${i+1}: ${questions[i]}`)
   console.log(`Your answer: ${candidateAnswers[i]}`);
@@ -39,12 +41,12 @@ function gradeQuiz(candidateAnswers) {
   console.log()
 
   if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
-    grade++
+    score++
   }
   }
-  let percentage = grade / questions.length * 100;
-  console.log(`Quiz Score: ${percentage}%`)
-  if (percentage >= 80) {
+  grade = score / questions.length * 100;
+  console.log(`Quiz Score: ${grade}%`)
+  if (grade >= 80) {
     console.log(`Congratulations, you passed!`)
   }
   else {
